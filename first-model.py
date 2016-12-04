@@ -9,7 +9,7 @@ import numpy as np
 from numpy import genfromtxt
 import os
 import pandas as pd
-os.chdir('/Users/rweyant/Documents/projects/numerai/')
+#os.chdir('/Users/rweyant/Documents/projects/numerai/')
 
 ## LOAD DATA
 print('Loading Data')
@@ -24,19 +24,19 @@ X[:,:].mean()
 print('(Training) X: %s, Y: %s' % (X.shape, y.shape))
 
 model = Sequential()
-model.add(Dense(200, activation='linear', input_shape=(X.shape[1],), W_regularizer=l2(0.01)))
+model.add(Dense(200, activation='linear', input_shape=(X.shape[1],), W_regularizer=l2(0.005)))
 model.add(Dropout(0.2))
-model.add(Dense(200, activation='linear', W_regularizer=l2(0.05)))
+model.add(Dense(200, activation='linear', W_regularizer=l2(0.005)))
 model.add(Dropout(0.2))
-model.add(Dense(200, activation='linear', W_regularizer=l2(0.05)))
+model.add(Dense(200, activation='linear', W_regularizer=l2(0.005)))
 model.add(Dropout(0.2))
-model.add(Dense(200, activation='linear', W_regularizer=l2(0.05)))
+model.add(Dense(200, activation='linear', W_regularizer=l2(0.005)))
 model.add(Dropout(0.2))
-model.add(Dense(200, activation='linear'))
+#model.add(Dense(200, activation='linear'))
+#model.add(Dropout(0.2))
+model.add(Dense(200, activation='linear', W_regularizer=l2(0.005)))
 model.add(Dropout(0.2))
-model.add(Dense(200, activation='linear', W_regularizer=l2(0.05)))
-model.add(Dropout(0.2))
-model.add(Dense(200, activation='linear', W_regularizer=l2(0.05)))
+model.add(Dense(200, activation='linear', W_regularizer=l2(0.005)))
 #model.add(Dropout(0.2))
 #model.add(Dense(21, activation='linear', W_regularizer=l2(0.001)))
 #model.add(Dropout(0.2))
